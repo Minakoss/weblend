@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "WebBlend - Digital Solutions for a Connected World",
+  title: "WebBlend - Διαχείριση Social Media",
   description:
     "Αναπτύσσουμε σύγχρονες και καινοτόμες ιστοσελίδες, βελτιστοποιημένες για SEO και digital marketing. Απογειώστε την online παρουσία σας με custom λύσεις για Google, Instagram, Facebook και TikTok Ads. ",
 };

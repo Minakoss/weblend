@@ -11,9 +11,7 @@ const Navbar = () => {
         <Link href="/services" className="hover:text-gray-400">
           Υπηρεσίες
         </Link>
-        <Link href="/portfolio" className="hover:text-gray-400">
-          Portfolio
-        </Link>
+
         <Link href="/contact" className="hover:text-gray-400">
           Επικοινωνία
         </Link>
