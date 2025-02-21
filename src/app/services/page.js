@@ -1,60 +1,52 @@
+"use client";
+import { useEffect, useState } from "react";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import { FaPaperPlane, FaPlaneDeparture, FaRocket } from "react-icons/fa";
-
-const services = [
-  {
-    icon: <FaPaperPlane />,
-    title: "STANDARD",
-    posts: "8 posts/μήνα",
-    stories: "2 stories/μήνα",
-    details: [
-      "15ημερο Post Calendar",
-      "Μηνιαίο Report",
-      "Copywriting",
-      "#hashtags",
-      "1 Boost post +50€",
-    ],
-    price: "100€ / μήνα",
-  },
-  {
-    icon: <FaPlaneDeparture />,
-    title: "PLUS",
-    posts: "12 posts/μήνα",
-    stories: "4 stories/μήνα",
-    details: [
-      "15ημερο Post Calendar",
-      "Μηνιαίο Report",
-      "Copywriting",
-      "#hashtags",
-      "1 Boost post +50€",
-    ],
-    price: "150€ / μήνα",
-  },
-  {
-    icon: <FaRocket />,
-    title: "PRO",
-    posts: "20 posts/μήνα",
-    stories: "8 stories/μήνα",
-    details: [
-      "15ημερο Post Calendar",
-      "Μηνιαίο Report",
-      "Copywriting",
-      "#hashtags",
-      "3 Boost posts",
-    ],
-    price: "300€ / μήνα",
-  },
-];
+import translations from "@/app/lib/translations";
 
 export default function ServicesPage() {
+  const [lang, setLang] = useState("en"); // Default στα αγγλικά
+
+  useEffect(() => {
+    const browserLang = navigator.language.startsWith("el") ? "el" : "en";
+    setLang(browserLang);
+  }, []);
+
+  const t = translations[lang];
+
+  const services = [
+    {
+      icon: <FaPaperPlane />,
+      title: t.standard,
+      posts: `8 ${t.posts}`,
+      stories: `2 ${t.stories}`,
+      details: t.details,
+      price: `100${t.price}`,
+    },
+    {
+      icon: <FaPlaneDeparture />,
+      title: t.plus,
+      posts: `12 ${t.posts}`,
+      stories: `4 ${t.stories}`,
+      details: t.details,
+      price: `150${t.price}`,
+    },
+    {
+      icon: <FaRocket />,
+      title: t.pro,
+      posts: `20 ${t.posts}`,
+      stories: `8 ${t.stories}`,
+      details: [...t.details.slice(0, 4), "3 Boost posts"],
+      price: `300${t.price}`,
+    },
+  ];
+
   return (
     <>
       <Navbar />
       <section className="py-16 bg-gray-900 text-white text-center min-h-screen">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8">
-          Οι Υπηρεσίες μας
-        </h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-8">{t.title}</h2>
         <div className="grid md:grid-cols-3 gap-8 px-4 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <div key={index} className="p-6 bg-gray-800 rounded-lg shadow-lg">

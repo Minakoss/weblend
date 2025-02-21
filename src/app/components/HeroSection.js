@@ -11,7 +11,7 @@ const HeroSection = () => {
         Δημιουργούμε μοντέρνες και αποδοτικές ιστοσελίδες για κάθε ανάγκη.
       </p>
       <Link href="/services">
-        <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg">
+        <button className="bg-green-500 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg">
           Δείτε τις υπηρεσίες μας
         </button>
       </Link>
